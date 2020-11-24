@@ -7,7 +7,7 @@ void PrintIntroduction(int diff)
     std::cout << "You need to enter the correct code to continue... " << std::endl;
 }
 
-bool Playgame(int difficulty)
+bool Playgame(int difficulty, int maxLevel)
 {
 
     PrintIntroduction(difficulty);
@@ -35,7 +35,16 @@ bool Playgame(int difficulty)
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
 
-        std::cout << "You win !!" << std::endl;
+        if (difficulty < maxLevel)
+        {
+            std::cout << "Great You are on the next level" << std::endl;
+        }
+
+        if (difficulty == maxLevel)
+        {
+            std::cout << "You win !!" << std::endl;
+        }
+
         return true;
     }
     else
@@ -53,7 +62,7 @@ int main()
     while (levelDiff <= 10)
     {
         bool bLevelComplete;
-        bLevelComplete = Playgame(levelDiff);
+        bLevelComplete = Playgame(levelDiff, MaxLevel);
 
         if (!bLevelComplete)
         {
