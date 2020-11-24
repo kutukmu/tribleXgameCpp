@@ -6,8 +6,26 @@ int main()
     std::cout << "You are a secret agent breaking into a secure server room " << std::endl;
     std::cout << "You need to enter the correct code to continue... " << std::endl;
 
-    std::cout << "There are 3 numbers in the code" << std::endl;
-    std::cout << "The codes add up to: " << std::endl;
+    int CodeA = 10;
+    int CodeC = 20;
+    int CodeB = 30;
 
+    int CodeSum = CodeA + CodeC + CodeB;
+    int COdeProduct = CodeA * CodeC * CodeB;
+
+    std::cout << "There are 3 numbers in the code: " << CodeA << ", " << CodeB << ", " << CodeC << std::endl;
+    std::cout << "The codes add up to: " << CodeSum << std::endl;
+
+    int GuessA, GuessB, GuessC;
+
+    std::cout << "Plase guess the number " << std::endl;
+    std::cin >> GuessA;
+    std::cin >> GuessB;
+    std::cin >> GuessC;
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
+
+    std::cout << "Your guess is sum is:  " << GuessSum << std::endl;
     return 0;
 }
