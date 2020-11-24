@@ -12,9 +12,9 @@ bool Playgame(int difficulty, int maxLevel)
 
     PrintIntroduction(difficulty);
 
-    int CodeA = rand() % (5 + difficulty) + 1;
-    int CodeC = rand() % (5 + difficulty) + 1;
-    int CodeB = rand() % (5 + difficulty) + 1;
+    int CodeA = rand() % difficulty + difficulty;
+    int CodeC = rand() % difficulty + difficulty;
+    int CodeB = rand() % difficulty + difficulty;
 
     int CodeSum = CodeA + CodeC + CodeB;
     int CodeProduct = CodeA * CodeC * CodeB;
