@@ -1,9 +1,15 @@
 #include <iostream>
 
-void Playgame()
+void PrintIntroduction()
 {
     std::cout << "You are a secret agent breaking into a secure server room " << std::endl;
     std::cout << "You need to enter the correct code to continue... " << std::endl;
+}
+
+void Playgame()
+{
+
+    PrintIntroduction();
 
     int CodeA = 10;
     int CodeC = 20;
@@ -13,11 +19,11 @@ void Playgame()
     int CodeProduct = CodeA * CodeC * CodeB;
 
     std::cout << "There are 3 numbers in the code: " << CodeA << ", " << CodeB << ", " << CodeC;
-    std::cout << "\n The codes add up to: " << CodeSum;
+    std::cout << "\nThe codes add up to: " << CodeSum;
 
     int GuessA, GuessB, GuessC;
 
-    std::cout << "\n Plase guess the number " << std::endl;
+    std::cout << "\nPlase guess the number " << std::endl;
     std::cin >> GuessA;
     std::cin >> GuessB;
     std::cin >> GuessC;
