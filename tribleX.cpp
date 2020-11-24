@@ -6,7 +6,7 @@ void PrintIntroduction()
     std::cout << "You need to enter the correct code to continue... " << std::endl;
 }
 
-bool Playgame()
+bool Playgame(int difficulty)
 {
 
     PrintIntroduction();
@@ -18,8 +18,8 @@ bool Playgame()
     int CodeSum = CodeA + CodeC + CodeB;
     int CodeProduct = CodeA * CodeC * CodeB;
 
-    std::cout << "There are 3 numbers in the code: " << CodeA << ", " << CodeB << ", " << CodeC;
     std::cout << "\nThe codes add up to: " << CodeSum;
+    std::cout << "\nCode Product: " << CodeProduct << std::endl;
 
     int GuessA, GuessB, GuessC;
 
@@ -45,14 +45,19 @@ bool Playgame()
 int main()
 {
 
+    int levelDiff = 1;
     while (true)
     {
         bool bLevelComplete;
-        bLevelComplete = Playgame();
+        bLevelComplete = Playgame(levelDiff);
 
         if (!bLevelComplete)
         {
             break;
+        }
+        else
+        {
+            levelDiff++;
         }
         std::cin.clear();
         std::cin.ignore();
