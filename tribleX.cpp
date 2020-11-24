@@ -1,15 +1,16 @@
 #include <iostream>
 
-void PrintIntroduction()
+void PrintIntroduction(int diff)
 {
-    std::cout << "You are a secret agent breaking into a secure server room " << std::endl;
+    std::cout << "You are a secret agent breaking into ";
+    std::cout << diff << " level secure server room" << std::endl;
     std::cout << "You need to enter the correct code to continue... " << std::endl;
 }
 
 bool Playgame(int difficulty)
 {
 
-    PrintIntroduction();
+    PrintIntroduction(difficulty);
 
     int CodeA = 10;
     int CodeC = 20;
@@ -33,6 +34,8 @@ bool Playgame(int difficulty)
 
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
+
+        std::cout << "You win !!" << std::endl;
         return true;
     }
     else
@@ -46,7 +49,8 @@ int main()
 {
 
     int levelDiff = 1;
-    while (true)
+    const int MaxLevel = 10;
+    while (levelDiff <= 10)
     {
         bool bLevelComplete;
         bLevelComplete = Playgame(levelDiff);
@@ -59,6 +63,7 @@ int main()
         {
             levelDiff++;
         }
+
         std::cin.clear();
         std::cin.ignore();
     }
